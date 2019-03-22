@@ -1,0 +1,10 @@
+{% import 'macros/form.html' as form %}
+
+{% for x in range(1,11) %}
+
+  {{ form.input('topten_title_'+(x|string), id='topten_title_'+(x|string), label=_('Top Ten title '+(x|string)), placeholder=_('eg. Emily'), value=data['topten_title_'+(x|string)], error=errors['topten_title_'+(x|string)]) }}
+
+  {{ form.input('topten_description_'+(x|string), id='topten_description_'+(x|string), label=_('Top Ten description '+(x|string)), placeholder=_('eg. This baby name has been #1 for 5 years'), value=data['topten_description_'+(x|string)], error=errors['topten_description_'+(x|string)]) }}
+
+{% endfor %}
+

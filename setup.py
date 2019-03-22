@@ -25,7 +25,7 @@ setup(
 
     # Author details
     author='''Bianca Sayan''',
-    author_email='''bianca.sayan@gmail.comm''',
+    author_email='''bianca.sayan@gmail.com''',
 
     # Choose your license
     license='AGPL',
@@ -48,7 +48,7 @@ setup(
 
 
     # What does your project relate to?
-    keywords='''CKAN visualization''',
+    keywords='''CKAN visualizations views topten summary''',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().

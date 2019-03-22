@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block styles %}
+  {{ super() }}
+  {% resource 'topten_visualization/topten.css' %}
+{% endblock %}
+{% block page %}
+<div class="topten">
+  <ol ol class="fancy">
+    {% for x in range(1,11) %}
+      {% set title = resource_view.get('topten_title_'+(x|string)) %}
+      {% set description = resource_view.get('topten_description_'+(x|string)) %}
+      {% if title!="" or description!="" %}
+        <li>
+          {% if title!="" and description!="" %}
+            <h3>{{ title }}</h3>
+          {% endif %}
+          {% if title!="" and description=="" %}
+            <p>{{ title }}</p>
+          {% endif %}
+          {% if description!="" %}
+            <p>{{ description }}</p>         
+          {% endif %}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ol>
+</div>
+{% endblock %}
+

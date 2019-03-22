@@ -1,0 +1,60 @@
+@primary-colour: #D47500;
+@secondary-colour: #007A7C;
+
+ol.fancy {
+ counter-reset: item;
+ margin-left: 5.5rem;
+
+ &> li {
+   list-style-type: none;
+   min-height: 4rem; // must be at least as tall as the bullets
+   @media (max-width: 400px) {
+     margin-bottom: 2rem;
+   }
+
+   &:before {
+     display: block;
+     margin-left: -5.5rem; // reverses the margin applied to the whole list
+     height: 4.2rem;
+     width: 4.2rem;
+     border-radius: 3rem;
+     text-align: center;
+     font-size: 3.5rem;
+     font-weight: bold;
+     line-height: 1;
+     counter-increment: item;
+     content: counter(item);
+     background-color: @primary-colour;
+     color: white;
+     @media (max-width: 400px) {
+       margin-left: -4.5rem; // reverses the margin applied to the whole list
+       height: 3.2rem;
+       width: 3.2rem;
+       font-size: 2.5rem;
+       line-height: 1.2;
+     }
+   }
+
+   // 2-digit numbers need to be smaller
+   &:nth-child(n+10):before {
+     font-size: 3rem;
+     line-height: 1.3;
+     @media (max-width: 400px) {
+       font-size: 2rem;
+       line-height: 1.5;
+     }
+   }
+
+   // raise the content to the same height as the “bullet”
+   &> *:first-child {
+     margin-top: -4rem;
+     @media (max-width: 400px) {
+       margin-top: -3.2rem;
+     }
+   }
+
+ }
+
+}
+
+
